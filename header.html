@@ -1,0 +1,59 @@
+
+<div flex layout="row">
+    
+    
+    <div ng-controller="PanelCtrl" layout="column" layout-fill flex="25">
+      <section layout="row" flex>
+
+        <md-content flex class="md-padding">
+
+            <div layout="column" layout-fill layout-align="center right">
+                <div flex="50" class="pfennig">
+                    <md-button class="md-fab md-primary"  ng-click="toggleRight()" id="toggle-right-menu"><md-icon icon="/img/icon-menu.svg"></md-icon></md-button>
+                </div>
+            </div>
+        </md-content>
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+          <md-toolbar class="md-theme-light" ng-controller="RightPanelCtrl" layout="row" >
+            <h1 class="md-toolbar-tools pfennig" flex="80">תפריט ניווט</h1>
+              <md-button class="md-fab md-primary"  flex="20" ng-click="close()"><md-icon icon="/img/icon-back.svg" style="height: 24px; width: 24px;"</md-icon></md-button>
+              <!--<md-icon icon="/img/icon-menu.svg" style="height: 24px; width: 24px;"></md-icon></md-button>-->
+
+          </md-toolbar>
+          <md-content class="md-padding">
+                <md-list>
+                  <md-item>
+                      <md-button aria-label="קישור לדוגמה">
+                          <span class="md-inline-list-icon-label">קישור לדוגמה</span>
+                      </md-button>
+                  </md-item>
+                    
+                    <md-item>
+                      <md-button aria-label="קישור לדוגמה">
+                          <span class="md-inline-list-icon-label">קישור לדוגמה</span>
+                      </md-button>
+                  </md-item>
+                    
+                    <md-item>
+                      <md-button aria-label="קישור לדוגמה">
+                          <span class="md-inline-list-icon-label">קישור לדוגמה</span>
+                      </md-button>
+                  </md-item>
+                    
+                </md-list>
+          </md-content>
+        </md-sidenav>
+      </section>
+    </div>
+    
+    
+    <div layout="column" flex="50" id="header-title">
+        <h1 class="pfennig">כנרת דיגיטל</h1>
+    </div>
+    
+    
+    
+    
+    
+</div>
+

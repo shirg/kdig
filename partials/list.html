@@ -1,0 +1,20 @@
+<section class="eventspage">
+  <div class="md-whiteframe-z1">
+    <h1 class="pfennig">אירועים</h1>
+    <label>חיפוש: </label>
+    <input ng-model="query" placeholder="חיפוש אירוע" autofocus>
+
+   
+  </div>
+  <ul class="artistlist" >
+    <li ng-animate="'animate'" class="artist cf" ng-repeat="item in events | filter: query | orderBy: eventsOrder">
+      <a href="#/details/{{events.indexOf(item)}}">
+        <img ng-src="{{item.thumbnail}}" alt="Photo of {{item.post_title}}" ng-show="item.thumbnail">
+        <div class="info">
+          <h2>{{item.post_title}}</h2>
+          <h3>{{item.custom_fields.start_date + " " +item.hebrew_day}}</h3>
+        </div>
+      </a>
+    </li>
+  </ul>  
+</section>

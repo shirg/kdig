@@ -1,0 +1,36 @@
+body { direction: rtl; font-family: 'Pfennig', serif;}
+
+
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Pfennig';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/fonts/pfennig500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pfennig';
+    font-weight: 500;
+    font-style: italic;
+    src: url('/fonts/pfennig500i.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pfennig';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/pfennig700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pfennig';
+    font-weight: 700;
+    font-style: italic;
+    src: url('/fonts/pfennig700i.woff') format('woff');
+}
+
+.pfennig {font-family: 'Pfennig', serif;}
+a {font-family: 'Pfennig', serif;}
