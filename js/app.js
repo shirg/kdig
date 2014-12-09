@@ -2,7 +2,6 @@ var myApp = angular.module('myApp', [
     'ngRoute',
     'postsControllers',
     'sideNavControllers'
-
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {
@@ -15,9 +14,15 @@ myApp.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'partials/details.html',
     controller: 'DetailsController'
   }).
+  when('/movies', {
+      templateUrl: 'partials/movies.html',
+      controller: 'MoviesController'
+  }).
   otherwise({
     redirectTo: '/list'
   });
 }]);
+
+
 
 

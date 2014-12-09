@@ -9,28 +9,32 @@
 
             <div layout="column" layout-fill layout-align="center right">
                 <div flex="50" class="pfennig">
-                    <md-button class="md-fab md-primary"  ng-click="toggleRight()" id="toggle-right-menu"><md-icon icon="/img/icon-menu.svg"></md-icon></md-button>
+                    <button class="md-button md-blue-theme"  ng-transclude="" style="min-width: 36px; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" layout="row" layout-align="center center" ng-click="toggleRight()" tabindex="0"><md-icon icon="img/icon-menu.svg" ></md-icon></button>
+                    <!-- <md-button class="md-fab md-primary"  ng-click="toggleRight()" id="toggle-right-menu"><md-icon icon="/img/icon-menu.svg"></md-icon></md-button> -->
                 </div>
             </div>
         </md-content>
         <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
-          <md-toolbar class="md-theme-light" ng-controller="RightPanelCtrl" layout="row" >
+          <md-toolbar class="md-theme-light"  layout="row" >
+            <button class="md-button md-blue-theme" flex="20"  ng-transclude="" style="min-width: 36px; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" layout="row" layout-align="center center" ng-click="close()" tabindex="0">&lt;</button>
             <h1 class="md-toolbar-tools pfennig" flex="80">תפריט ניווט</h1>
-              <md-button class="md-fab md-primary"  flex="20" ng-click="close()"><md-icon icon="/img/icon-back.svg" style="height: 24px; width: 24px;"</md-icon></md-button>
-              <!--<md-icon icon="/img/icon-menu.svg" style="height: 24px; width: 24px;"></md-icon></md-button>-->
-
           </md-toolbar>
           <md-content class="md-padding">
                 <md-list>
+                    <md-item>
+                        <md-button ng-click="close()" aria-label="" >
+                            <a href="index.html"><span class="md-inline-list-icon-label">ראשי</span></a>
+                        </md-button>
+                    </md-item>
                   <md-item>
-                      <md-button aria-label="קישור לדוגמה">
-                          <span class="md-inline-list-icon-label">קישור לדוגמה</span>
+                      <md-button  ng-click="close()" aria-label="אירועים">
+                          <a href="#/list"><span class="md-inline-list-icon-label">אירועים</span></a>
                       </md-button>
                   </md-item>
                     
                     <md-item>
-                      <md-button aria-label="קישור לדוגמה">
-                          <span class="md-inline-list-icon-label">קישור לדוגמה</span>
+                      <md-button ng-click="close()" aria-label="סרטים">
+                          <a href="#/movies"><span class="md-inline-list-icon-label">סרטים</span></a>
                       </md-button>
                   </md-item>
                     
@@ -48,7 +52,8 @@
     
     
     <div layout="column" flex="50" id="header-title">
-        <h1 class="pfennig">כנרת דיגיטל</h1>
+        <h1 class="pfennig">
+        </h1>
     </div>
     
     

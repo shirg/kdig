@@ -213,10 +213,8 @@ a.small {
 /* Artist List Styles */
 
 .artistlist {
-  background: #EEE8D5;
-  width: 50%;
+  background: #ffffff;
   min-width: 290px;
-  max-width:350px;
   margin: 0 auto;
   margin-bottom: 30px;
   border-radius: 0 0 20px 20px;
@@ -227,37 +225,30 @@ a.small {
 .artistlist ul {
   margin: 0;
   padding: 0;
-  background: #FDF6E3;
 }
 
 .artistlist li {
   margin: 0;
   padding: 10px 10px 0 10px;
-  border-bottom: 1px dotted black;
-  opacity: .9;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  border-bottom: 1px solid #efefef;
+
+
 }
 
 .artistlist a {
   display: block;
   text-decoration: none;
+  font-family: 'Pfennig', 'serif';
 }
 
 .artistlist li:hover {
-  background: #FDF6E3;
-  opacity: 1;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+  background: #e9e9e9;
+    font-family: 'Pfennig', 'serif';
 }
 
 .artist img {
   display: block;
-  float: left;
+  float: right;
   width: 60px;
   -webkit-border-radius: 12px;
   border-radius: 12px;
