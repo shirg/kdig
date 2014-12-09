@@ -1,16 +1,17 @@
 <!--
 // TODO: Add Search input named "query"
+// TODO: Splite to tabs: Culture & Arts (594), Lectures (609)
 -->
 <md-content class="md-padding">
     <md-list>
-        <md-item ng-repeat="item in movies | filter: query | orderBy: moviesOrder">
+        <md-item ng-repeat="item in culture | filter: query | orderBy: cultureOrder">
             <md-item-content>
 
                 <div class="md-tile-right">
-                    <a href="#/details/{{movies.indexOf(item)}}"><img ng-src="{{item.thumbnail}}" class="face" alt="Photo of {{item.post_title}}" ng-show="item.thumbnail"></a>
+                    <a href="#/details/{{culture.indexOf(item)}}"><img ng-src="{{item.thumbnail}}" class="face" alt="Photo of {{item.post_title}}" ng-show="item.thumbnail"></a>
                 </div>
                 <div class="md-tile-content">
-                    <a href="#/details/{{movies.indexOf(item)}}"><h3>{{item.post_title}}</h3></a>
+                    <a href="#/details/{{culture.indexOf(item)}}"><h3>{{item.post_title}}</h3></a>
                     <h4>{{item.custom_fields.start_date + " " +item.hebrew_day}}</h4>
                     <p>
                         Notes goes here {{item.notes}}

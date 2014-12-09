@@ -1,8 +1,8 @@
 
-var postsControllers = angular.module('postsControllers', ['ngAnimate']);
+var postsControllers = angular.module('postsControllers', []);
 
 // TODO: Make this cache instead of global variables
-var global_events, global_movies;
+var global_events, global_movies, global_restaurants, global_culture;
 
 /* Events - Fetch and display events */
 postsControllers.controller('EventsController', ['$scope', '$http', function($scope, $http) {
@@ -28,7 +28,7 @@ postsControllers.controller('EventsController', ['$scope', '$http', function($sc
 }]);
 
 
-/**** Display Details for each event item ****/
+/* Display Details for each event item */
 postsControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
 
     if (typeof global_events == 'undefined'){
@@ -70,11 +70,9 @@ postsControllers.controller('DetailsController', ['$scope', '$http','$routeParam
     }
 }]);
 
-
+/* Movies - Fetch and display movies */
 postsControllers.controller('MoviesController', ['$scope', '$http', function($scope, $http) {
-
-
-    $scope.eventsOrder = 'post_title';
+    $scope.moviesOrder = 'post_title';
 
     $http.get('http://kinneret.mobi/?getjson=1&cat=593&order_by=meta_value&meta_key=start_date').success(function(data) {
         console.log('SUCCESS getting -movies- by JSON');
@@ -88,12 +86,44 @@ postsControllers.controller('MoviesController', ['$scope', '$http', function($sc
         error(function(data, status ){
             console.log('FAILED getting -movies- by JSON');
         });
-
-
-
 }]);
 
 
+/* Restaurants - Fetch and display restaurants */
+postsControllers.controller('RestaurantsController', ['$scope', '$http', function($scope, $http) {
+    $scope.restaurantsOrder = 'post_title';
+
+    $http.get('http://kinneret.mobi/?getjson=1&cat=5&order_by=post_title').success(function(data) {
+        console.log('SUCCESS getting -restaurants- by JSON');
+        console.log(data);
+
+        $scope.restaurants = data;
+        global_restaurants = data;
+        $scope.eventsOrder = 'custom_fields.post_title';
+
+    }).
+        error(function(data, status ){
+            console.log('FAILED getting -restaurants- by JSON');
+        });
+}]);
+
+/* Culture - Fetch and display restaurants */
+postsControllers.controller('CultureController', ['$scope', '$http', function($scope, $http) {
+
+
+    $http.get('http://kinneret.mobi/?getjson=1&cat=609&order_by=meta_value&meta_key=start_date').success(function(data) {
+        console.log('SUCCESS getting -culture- by JSON');
+        console.log(data);
+
+        $scope.culture = data;
+        global_culture = data;
+        $scope.cultureOrder = 'custom_fields.start_date';
+
+    }).
+        error(function(data, status ){
+            console.log('FAILED getting -culture- by JSON');
+        });
+}]);
 
 
 /***** Side Panels ********/
@@ -105,15 +135,14 @@ sideNavControllers.controller('PanelCtrl', ['$scope', '$timeout', '$mdSidenav', 
   $scope.close = function() {    $mdSidenav('right').close();  };
 }]);
 
+
+// TODO: Complete this dynamic page title. Not working. See also app.js
 /*
-sideNavControllers.controller('RightPanelCtrl', ['$scope', '$timeout', '$mdSidenav', function($scope, $timeout, $mdSidenav) {
-    $scope.close = function() {    $mdSidenav('right').close();  };
+var pageControllers = angular.module('pageControllers',[]);
+pageControllers.controller('PageTitleController', ['$scope', function($scope){
+        $scope.Page = Page;
 }]);
 */
-
-
-
-
 
 
 /* ------- */
